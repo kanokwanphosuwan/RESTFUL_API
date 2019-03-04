@@ -1,0 +1,22 @@
+{
+  "GeneralWaste" : {
+    "IR_generalwaste" : 0,
+    "NumTrash_generalwast" : 0,
+    "Push_generalwaste_Value" : 0,
+    "generalwaste_Value" : 0
+  },
+  "HazardousWaste" : {
+    "IR_hazardouswaste" : 0,
+    "NumTrash_hazardouswaste" : 0,
+    "Push_hazardouswaste_Value" : 0,
+    "Smookgas" : ".",
+    "hazardouswaste_Value" : 0
+  },
+  "WetJunk" : {
+    "Hydrogensulfinde" : ".",
+    "IR_wetjunk" : 0,
+    "NumTrash_wetjunk" : 0,
+    "Push_wetjunk_Value" : 0,
+    "wetjunk_Value" : 0
+  }
+}

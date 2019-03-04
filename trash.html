@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ระบบวิเคราะห์การจัดเตรียมการติดตั้งถังขยะ</title>
+
+
+
+    <link rel="stylesheat" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        h1 {
+
+            color: blue;
+            font-size: 40px;
+        }
+
+        h4 {
+            color: rgb(24, 141, 161);
+            font-size: 40px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        table,
+        td,
+        th {
+
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        /* table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }*/
+
+        th {
+            color: rgb(182, 65, 81);
+            font-size: 20px;
+            text-align: center;
+        }
+
+        td {
+            color: rgb(7, 7, 7);
+            font-size: 10px;
+            text-align: center;
+        }
+
+        body {
+            background-color: skyblue
+        }
+
+        /* Style the header */
+        header {
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+
+        /* Container for flexboxes */
+        section {
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        /* Style the navigation menu */
+        nav {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            background: #ccc;
+            padding: 20px;
+        }
+
+        /* Style the list inside the menu */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Style the content */
+        article {
+            -webkit-flex: 3;
+            -ms-flex: 3;
+            flex: 3;
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+        @media (max-width: 600px) {
+            section {
+                -webkit-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h2 style="color:Orange;">ระบบวิเคราะห์การจัดเตรียมการติดตั้งถังขยะ</h2>
+        <p style="color:Orange;">Analytical system for preparing the trash installation</p>
+        <section>
+            <nav>
+
+                <h1>ข้อมูลย้อนหลัง</h1>
+
+                <table style="width:100%">
+                    <tr>
+                        <th>สัปดาห์</th>
+                        <th>ขยะแห้ง</th>
+                        <th>ขยะเปียก</th>
+                        <th>ขยะอันตราย</th>
+                    </tr>
+                    <tr>
+                        <td>จันทร์</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td>อังคาร</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td>พุธ</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>พฤหัสบดี</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>ศุกร์</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <br>
+                <table style="width:100%">
+                    <tr>
+                        <th>เดือน</th>
+                        <th>ขยะแห้ง</th>
+                        <th>ขยะเปียก</th>
+                        <th>ขยะอันตราย</th>
+                    </tr>
+                    <tr>
+                        <td>สัปดาห์1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td>สัปดาห์2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td>สัปดาห์3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>สัปดาห์4</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            </nav>
+
+            <article>
+                <h1>ปริมาณขยะ</h1>
+                <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+                <h4>ข้อมูลแนะนำการติดตังถังขยะ</h4>
+
+                <table style="width:100%">
+                    <tr>
+                        <th>วัน</th>
+                        <th>ขยะแห้ง</th>
+                        <th>ขยะเปียก</th>
+                        <th>ขยะอันตราย</th>
+                    </tr>
+                    <tr>
+                        <td>จันทร์</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td>อังคาร</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td>พุธ</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>พฤหัสบดี</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+
+                        <td>ศุกร์</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                </table>
+
+            </article>
+        </section>
+    </header>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAvvfnWWLTyurkt4LLUIcg8ne1-v69XQAU",
+            authDomain: "analytic-trash.firebaseapp.com",
+            databaseURL: "https://analytic-trash.firebaseio.com",
+            projectId: "analytic-trash",
+            storageBucket: "analytic-trash.appspot.com",
+            messagingSenderId: "675250718020"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawVisualization)
+
+        window.onload = function () {
+            var firebaseRef = firebase.database().ref("GeneralWaste");
+            firebaseRef.once('value').then(function (datasnapshot) {
+                datasnapshot.forEach(function (childSnapshot) {
+                    var childKay = childSnapshot.Kay;
+                    var childData = childSnapshot.val();
+                    console.log(childData, childKay);
+
+
+                });
+            });
+            var firebaseRef1 = firebase.database().ref("HazardousWaste");
+            firebaseRef1.once('value').then(function (datasnapshot) {
+                datasnapshot.forEach(function (childSnapshot) {
+                    var childKay1 = childSnapshot.Kay;
+                    var childData1 = childSnapshot.val();
+                    console.log(childData1, childKay1);
+
+
+                });
+            });
+            var firebaseRef2 = firebase.database().ref("WetJunk");
+            firebaseRef2.once('value').then(function (datasnapshot) {
+                datasnapshot.forEach(function (childSnapshot) {
+                    var childKay2 = childSnapshot.Kay;
+                    var childData2 = childSnapshot.val();
+                    console.log(childData2, childKay2);
+
+
+                });
+            });
+
+        }
+
+        function drawVisualization() {
+            var firebaseRef = firebase.database().ref("GeneralWaste");
+            var firebaseRef1 = firebase.database().ref("HazardousWaste");
+            var firebaseRef2 = firebase.database().ref("WetJunk");
+
+            var g = "generalwaste_Value";
+            var h = "hazardouswaste_Value";
+            var w = "wetjunk_Value";
+
+            var dataArray1 = [
+                ['สัปดาห์', 'GeneralWaste', 'HazardousWaste', 'WetJunk'],
+                ['จันทร์', g, h, w],
+                ['อังคาร', g, h, w],
+                ['พุธ', g, h, w],
+                ['พฤหัสบดี', g, h, w],
+                ['ศุกร์', g, h, w]
+
+
+
+            ];
+
+            // แปลงข้อมูลจาก array สำหรับใช้ในการสร้าง กราฟ
+            var data = google.visualization.arrayToDataTable(dataArray1);
+
+            var options = {
+                title: 'กราฟแสดงปริมาณขยะ',
+                vAxis: { title: 'ปริมาณขยะ' },
+                hAxis: { title: 'แสดงข้อมูลเป็นสัปดาห์' },
+                width: 900,
+                height: 400,
+                bar: { groupWidth: "70%" },
+                legend: { position: 'right', maxLines: 3 },
+                tooltip: { trigger: 'select' }
+
+            };
+
+            // สร้างกราฟแนวตั้ง แสดงใน div id = chart_div
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            chart.draw(data, options); // สร้างกราฟ
+            chart = null;
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
